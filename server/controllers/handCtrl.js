@@ -62,19 +62,6 @@ getHands = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
-updateHandById = async (req, res) => {
-    await Hand.findOne({_id: req.params.id}, (err, hand) => {
-        if (err){
-            return res.status(400).json({success: false, error: err})
-        }
-        if (!hands.length) {
-            return res
-                .status(404)
-                .json({ success: false, error: `Hand not found` })
-        }
-        return res.status(200).json({ success: true, data: hands })
-    }).catch(err => console.log(err))
-}
 
 module.exports = {
     createHand,
