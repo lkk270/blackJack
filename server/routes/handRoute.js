@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.post('/hand', handCtrl.createHand);
 router.get('/hand/:id', handCtrl.getHandById);
-
+router.get('/hands', handCtrl.getHands);
 
 module.exports = router;
