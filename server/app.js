@@ -7,7 +7,11 @@ const handRouter = require('./routes/handRoute');
 const app = express();
 const path = require('path');
 //app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(bodyParser.json());
 
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 app.get('/', (req, res) => {
