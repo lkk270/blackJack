@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>Cards!</title>
+	<link rel="stylesheet" href="./stylesheets/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<meta charset="utf-8" /> 
+</head>
+<body>
+	<!-- DO NOT MODIFY THIS MARKUP -->
+	<script type="module" src = ></script>
+	<script type="module" src="./javascripts/main.js"></script>
+	<script type="module" src="./api/index.js"></script>
+	<div class="start" id="dform">
+		<form method="POST" action="">
+			<label for="startValues">Start Values:</label> <input type="text" name="startValues" id="startValues" placeholder="Enter cards if you wish">  
+			<input class="play" id="playBtn" type="submit" value="Play">  
+			<input class="play" id="noPlayBtn" type="submit" value="Pick For Me">
+		</form>
+	</div>
+	<div class="data" id="dbForm">
+			<form method="POST" action="">
+				<label for="initials"></label> <input type="text" name="intials" id="intials" placeholder="Enter intials">  
+				<input class="addInitial" id="dbUpload" type="submit" value="Go">  	
+			</form>
+		</div>
+	<p id="demo"></p>
+	<div class="game" id='g'>
+	<div class="run" id="play"></div>
+	</div>
+</body>
+</html>
