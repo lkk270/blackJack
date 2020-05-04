@@ -1,0 +1,206 @@
+/* style.css */
+body {
+    background-color: black;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+      
+  }
+
+div.start
+{
+    
+    border-radius: 25px;
+    width: 200px; 
+    padding: 30px;
+    height: 100px;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    background: #2db497;
+}
+
+
+div.data
+{   
+    border-radius: 25px;
+    padding: 30px;
+    position: absolute;
+    width: 200px; 
+    background: #2db497;
+    display: none;
+}
+
+
+#startValues{
+    
+    border-radius: 25px;
+    top: 80%;
+    margin:auto;
+    font-size: 16px; 
+    font-family: Arial;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    background:#b0a1e7;
+   
+    
+}
+
+label{
+    border-radius: 25px;
+    margin:auto;
+    color:#ec55bf;
+    font-size: 20px; 
+    font-family: cursive;
+    font-weight: bold;
+    
+}
+
+
+.play{
+    width: 90px;
+    margin:auto;
+    cursor: pointer;
+    position: absolute;
+    background-color: #260d80;
+    color: #FFFFFF;
+    padding: 10px;
+    top: 65%;
+    border-radius: 10px;  
+}
+
+#playBtn{
+    left: 15%;
+}
+#noPlayBtn{
+    left: 52%;
+}
+
+.play:hover{
+    background-color: #ec55bf;
+}
+
+.moves{
+    top: 55%;
+    width: 60px;
+    cursor: pointer;
+    position: absolute;
+    background-color: #260d80;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px; 
+
+}
+#hit {
+    left: 60%;
+  
+   
+}
+#stand {  
+    left: 65%;
+    
+}
+
+
+.moves:hover{
+    background-color: #ec55bf;
+}
+
+
+.info{
+    padding: 20px;
+    border-radius: 25px;
+    position: absolute;
+    left: 40%;
+    top: 5%;
+    font-size: 20px; 
+    color: #4bcbf1;
+    background: #220a77;
+    display: inline-block;
+}
+
+#userInfo{
+    top: 50%;
+    left: 41.5%;
+}
+
+#statusText{
+    position: absolute;
+    top: 52%;
+    left: 62%;
+    font-size: 30px; 
+    font-family: cursive;
+    font-weight: bold;
+    color: #f14bac;
+}
+.area{
+    text-align: center;
+    height: 500px;
+}
+#g .compCards{
+    position: relative;
+    top: 24%;
+    width: 75px;
+    height: 120px;
+    padding: 20px;
+    border: solid 1px #808080;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20pt;
+    margin: auto;
+    border:solid 3px;
+}
+
+#g .userCards{
+    position: relative;
+    top: -10%;
+    width: 75px;
+    height: 120px;
+    padding: 20px;
+    border: solid 1px #808edf;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20pt;
+    text-align: center;
+    margin: auto;
+    border:solid 3px;
+}
+
+#g .name1 {
+    position: relative;
+    top: 95%;
+    left: 47%;
+}
+
+#g .name2 {
+    position: relative;
+    top: -40%;
+    left: -50%;
+}
+
+#gameCont {
+    cursor: pointer;
+    position: absolute;
+    background-color: #260d80;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px; 
+    top: 52%;
+    left: 65%;
+}
+#gameCont:hover{
+    background-color: #ec55bf;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
