@@ -31,12 +31,10 @@ function postInitials(initials) {
     http.setRequestHeader('Content-type', 'application/json')
     http.send(JSON.stringify(params)) // Make sure to stringify
     http.onload = function() {
-        // Do whatever with response
-        
-        alert(http.responseText);
-        
+        alert(http.responseText);    
     }
 }
+
 
 function handToString(cards){
     let ret = '';
@@ -45,20 +43,23 @@ function handToString(cards){
     }
     return ret;
 }
+
+
 function listenForInitalInsert(){
     const play = document.getElementById('dbUpload');  
     play.addEventListener('click', function(evt){
         evt.preventDefault();
         const initals = getInitialsInput();
-        postInitials(initals);
-            
+        postInitials(initals);      
     });
 }
+
 
 function toggleDbForm() {
     const f = document.getElementById("dbForm");
     f.style.display === "none" ? f.style.display = "block" : f.style.display = "none";
 }
+
 
 function rTable(){
     const head = "<tr><th>User's Initials</th><th>Result</th><th>User Hand</th><th>Computer's Hand</th></tr>";
@@ -89,12 +90,14 @@ function rTable(){
     xmlhttp.send("x=" + dbParam);
 }
 
+
 function main() {
     window.deck = createDeck();
     shuffle();
     listenForPlay();
     listenForPickForMe();  
 }
+
 
 function mainFuncs(){
     rTable();
@@ -116,14 +119,14 @@ function mainFuncs(){
     listenForRestart();
 }
 
+
 function listenForPlay(){
     const play = document.getElementById('playBtn');  
     play.addEventListener('click', function(evt){
         const input  = getInput()
         window.deck = addToDeck(input);
         evt.preventDefault();
-        mainFuncs();
-            
+        mainFuncs();      
     });
 }
 
@@ -146,6 +149,7 @@ function listenForRestart(){
     })
 }
 
+
 function listenForPickForMe(){
     const noPlay = document.getElementById('noPlayBtn');  
     noPlay.addEventListener('click', function(evt){
@@ -154,12 +158,12 @@ function listenForPickForMe(){
     });
 }
 
+
 function listenForHit(){
     const hit = document.getElementById('hit'); 
     hit.addEventListener('click', function(evt){
         hitPress(user);
-        displayUserTotal();
-        
+        displayUserTotal();     
     });
 }
 
