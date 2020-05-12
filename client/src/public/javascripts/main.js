@@ -173,8 +173,7 @@ function listenForStand(){
         displayUserTotal();
         hideActionBtns();
         addOneCard(comp.cards, comp, 1, true);
-        compHit();
-        
+        compHit();  
     });
 }
 
@@ -199,8 +198,8 @@ function hitPress(player){
         addStatusText(-1);
         return;
     }
-    
 }
+
 
 function compHit(){
     let limit = 17;
@@ -253,10 +252,12 @@ function compHit(){
     displayCompTotal();
 }
 
+
 function showHiddenCard(){
     document.getElementById("compName0").innerHTML = '?'
     document.getElementById("compName2").innerHTML = '?'
 }
+
 
 function givenBlackJack(){
     if(user.total === 21){
@@ -270,6 +271,7 @@ function hideActionBtns(){
     document.getElementById('hit').style.display = "none";
     document.getElementById('stand').style.display = "none";
 }
+
 
 function disableActionBtns(){
     document.getElementById("hit").disabled = true;
@@ -491,8 +493,7 @@ function displayCompTotal(){
 }
 
 
-function renderDeal()
-{
+function renderDeal(){
     const compCards = comp.cards;
     const userCards = user.cards;
     for(let i = 0; i < compCards.length; i++){
@@ -522,9 +523,9 @@ function runSwitch(suit){
             pic = "<img src= /stylesheets/spade.png width=\"16\" height=\"16\">";
             break;
     }
-
     return pic
 }
+
 
 function addOneCard(cards, player, num, show){
     let card = document.createElement("div");
@@ -532,8 +533,7 @@ function addOneCard(cards, player, num, show){
     if(show === true){
         document.getElementById("compName0").innerHTML = cards[num - 1].cardValue + '' + pic;
         document.getElementById("compName2").innerHTML = cards[num - 1].cardValue + '' + pic;
-    }
-    
+    } 
     else{
         const divId = player.name + 'Area';
         let name = document.createElement("div");
@@ -559,5 +559,3 @@ function addOneCard(cards, player, num, show){
         getTotal(player); 
     }     
 }
-
-
