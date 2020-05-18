@@ -57,7 +57,7 @@ function listenForInitalInsert(){
 
 function toggleDbForm() {
     const f = document.getElementById("dbForm");
-    f.style.display === "none" ? f.style.display = "block" : f.style.display = "none";
+    f.style.display === "block" ? f.style.display = "block" : f.style.display = "none";
 }
 
 
@@ -95,7 +95,8 @@ function main() {
     window.deck = createDeck();
     shuffle();
     listenForPlay();
-    listenForPickForMe();  
+    listenForPickForMe(); 
+    listenForRestart();
 }
 
 
@@ -132,20 +133,27 @@ function listenForPlay(){
 
 
 function listenForRestart(){
-    toggleDbForm();
+    // toggleDbForm();
+    
     const restrt = document.getElementById("gameCont");
     restrt.addEventListener('click', function(evt){
-        document.getElementById("g").innerHTML = ""; 
-        reCreatePlayDiv();
-        result = '';
-        user = {name: 'user', cards: new Array(), total: 0};
-        comp = {name: 'comp', cards: new Array(), total: 0};
-        deck = createDeck();
-        console.log(deck)
-        shuffle();
-        //evt.preventDefault();
-        mainFuncs();
-        console.log('yooo')
+        location.reload();
+        // //document.getElementById("g").style.display = "none"; 
+        // document.getElementById("userArea").style.display = "none"; 
+        // document.getElementById("compArea").style.display = "none"; 
+        // document.addEventListener('DOMContentLoaded', main);
+        // reCreatePlayDiv();
+        // result = '';
+        // user = {name: 'user', cards: new Array(), total: 0};
+        // comp = {name: 'comp', cards: new Array(), total: 0};
+        // deck = createDeck();
+        // console.log(deck)
+        // shuffle();
+      
+        // //evt.preventDefault();
+        // main();
+        // mainFuncs();
+        // console.log('yooo')
     })
 }
 
@@ -280,7 +288,7 @@ function disableActionBtns(){
 
 
 function addStatusText(win){
-    toggleDbForm();
+    // toggleDbForm();
     let head = document.createElement("H3");
     head.setAttribute('class', 'status');
     head.setAttribute('id', 'statusText');
@@ -291,6 +299,7 @@ function addStatusText(win){
     {
         document.getElementById('statusText').innerHTML += "  YOU WON!!!! :)";
         result = 'WIN';   
+         
     }
     else if(win === 0){
         document.getElementById('statusText').innerHTML += "  YOU TIED";
@@ -303,6 +312,7 @@ function addStatusText(win){
 
     hideActionBtns();       
     document.getElementById('gameCont').style.display = "block";
+    document.getElementById("dbForm").style.display = "block";
     listenForInitalInsert();
 }
 
@@ -434,12 +444,13 @@ function createBtns(){
 
     document.body.appendChild(hitBtn);
     document.body.appendChild(standBtn);
-    document.getElementById('g').appendChild(hitBtn);
-    document.getElementById('g').appendChild(standBtn);
+    document.getElementById('allmoves').appendChild(hitBtn);
+    document.getElementById('allmoves').appendChild(standBtn);
 
     document.body.appendChild(restartBtn);
-    document.getElementById('g').appendChild(restartBtn);
+    document.getElementById('allmoves').appendChild(restartBtn);
     document.getElementById('gameCont').style.display = "none";
+
 }
 
 
@@ -464,6 +475,11 @@ function createText(){
     head2.setAttribute('id', 'userInfo');
     document.body.appendChild(head2);
     document.getElementById('userArea').appendChild(head2);
+
+    // let moves = document.createElement("div");
+    // moves.setAttribute('class', 'allmoves');
+    // //document.body.appendChild(moves);
+    // document.getElementById('userArea').appendChild(moves);
 
     let compInfo = document.createTextNode("");
     document.getElementById('compInfo').appendChild(compInfo);
